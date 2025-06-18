@@ -1,7 +1,7 @@
 {
-  "name": "novaworks-studio",
+  "name": "devgenix-studio",
   "version": "1.0.0",
-  "description": "A modern, responsive website for NovaWorks Studio",
+  "description": "A modern, responsive website for DevGenix Studio",
   "main": "index.js",
   "scripts": {
     "build": "tailwindcss -i ./css/style.css -o ./css/output.css",
@@ -14,7 +14,7 @@
     "portfolio",
     "blog"
   ],
-  "author": "NovaWorks Studio",
+  "author": "DevGenix Studio",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.4.14",

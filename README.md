@@ -1,6 +1,6 @@
-# NovaWorks Studio Website
+# DevGenix Studio Website
 
-A modern, responsive website for NovaWorks Studio, a creative web agency. Built with HTML, Tailwind CSS, and JavaScript.
+A modern, responsive website for DevGenix Studio, a creative web agency. Built with HTML, Tailwind CSS, and JavaScript.
 
 ## Features
 
@@ -31,8 +31,8 @@ A modern, responsive website for NovaWorks Studio, a creative web agency. Built 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/novaworks-studio.git
-cd novaworks-studio
+git clone https://github.com/yourusername/devgenix-studio.git
+cd devgenix-studio
 ```
 
 2. Install dependencies:
@@ -57,7 +57,7 @@ npx serve
 ## Project Structure
 
 ```
-novaworks-studio/
+devgenix-studio/
 ├── index.html
 ├── blog.html
 ├── blog/
@@ -118,6 +118,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-NovaWorks Studio - hello@novaworks.studio
+DevGenix Studio - hello@devgenix.studio
 
-Project Link: [https://github.com/yourusername/novaworks-studio](https://github.com/yourusername/novaworks-studio) 
+Project Link: [https://github.com/yourusername/devgenix-studio](https://github.com/yourusername/devgenix-studio) 
