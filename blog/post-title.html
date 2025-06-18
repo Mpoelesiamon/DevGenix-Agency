@@ -1,0 +1,101 @@
+<nav class="fixed w-full bg-white/90 dark:bg-dark/90 backdrop-blur-sm z-50">
+    <div class="container py-4">
+        <div class="flex items-center justify-between">
+            <a href="/" class="text-2xl font-display font-extrabold text-primary" style="font-family: 'Poppins', sans-serif; letter-spacing: 0.03em;">DevGenix</a>
+            <div class="flex-1 flex justify-center">
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/#about" class="text-dark dark:text-light hover:text-primary dark:hover:text-primary">About</a>
+                    <a href="/#services" class="text-dark dark:text-light hover:text-primary dark:hover:text-primary">Services</a>
+                    <a href="/#portfolio" class="text-dark dark:text-light hover:text-primary dark:hover:text-primary">Portfolio</a>
+                    <a href="/#testimonials" class="text-dark dark:text-light hover:text-primary dark:hover:text-primary">Testimonials</a>
+                    <a href="/#contact" class="text-dark dark:text-light hover:text-primary dark:hover:text-primary">Contact</a>
+                    <!-- Search Icon and Bar -->
+                    <div class="relative flex items-center">
+                        <form id="navbarSearchForm" class="flex items-center">
+                            <input id="navbarSearchInput" type="text" placeholder="Search..." class="transition-all duration-300 w-0 opacity-0 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none z-20 mr-2" style="width: 0;" autocomplete="off" />
+                            <button id="navbarSearchBtn" type="button" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 z-30">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <circle cx="11" cy="11" r="8" stroke-width="2"/>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" stroke-width="2"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                    <!-- Dark/Light Mode Icon -->
+                    <button id="darkModeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                        </svg>
+                        <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu button -->
+            <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<footer class="bg-white dark:bg-gray-800 py-12">
+    <div class="container">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <a href="/" class="text-2xl font-display font-extrabold text-primary" style="font-family: 'Poppins', sans-serif; letter-spacing: 0.03em;">DevGenix</a>
+                <p class="mt-4 text-gray-600 dark:text-gray-300">
+                    Building digital experiences that drive growth.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="../../js/script.js"></script>
+<script>
+// Navbar search bar toggle
+const searchBtn = document.getElementById('navbarSearchBtn');
+const searchInput = document.getElementById('navbarSearchInput');
+const searchForm = document.getElementById('navbarSearchForm');
+if (searchBtn && searchInput && searchForm) {
+    let open = false;
+    searchBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        open = !open;
+        if (open) {
+            searchInput.classList.remove('w-0', 'opacity-0');
+            searchInput.classList.add('w-48', 'opacity-100');
+            searchInput.style.width = '12rem';
+            setTimeout(() => searchInput.focus(), 100);
+        } else {
+            searchInput.classList.add('w-0', 'opacity-0');
+            searchInput.classList.remove('w-48', 'opacity-100');
+            searchInput.value = '';
+            searchInput.style.width = '0';
+        }
+    });
+    // Hide search bar when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !searchBtn.contains(e.target)) {
+            open = false;
+            searchInput.classList.add('w-0', 'opacity-0');
+            searchInput.classList.remove('w-48', 'opacity-100');
+            searchInput.value = '';
+            searchInput.style.width = '0';
+        }
+    });
+    // Handle search submit
+    searchForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const query = searchInput.value.trim();
+        if (query) {
+            // For now, just log the query
+            console.log('Search:', query);
+        }
+    });
+}
+</script> 
